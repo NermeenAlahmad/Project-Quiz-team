@@ -8,18 +8,13 @@ body{
     align-items: center;
     min-height: 100vh;
 }
-
 .container{
-    display: flex;
-    flex-flow: column;
-    text-align: center;
+   text-align: center;
     background-color: #ffffff59;
-    border-radius: 6px;
-    
+    border-radius: 15px;
 }
 .container h1{
-    margin-bottom: 25px;
-    ;
+    margin-bottom: 25px;;
 }
 .container h4{
     margin-bottom: 25px;
