@@ -14,3 +14,9 @@ i{
     font-size: 90px;
     color: green;
 }
+.wrong{
+    padding-top: 2rem;
+    font-size: 90px;
+    color: rgb(184, 0, 0);
+
+}
