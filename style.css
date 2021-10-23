@@ -1,0 +1,215 @@
+/* body {
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+  .signup-section{
+    width: 500px;
+    background-color: rgb(255 255 255 /35%);
+    padding: 20px;
+    border-radius: 6px;
+    
+  }
+  .main-section{
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Login  */
+  .login-section{
+    width: 500px;
+    background-color: rgb(255 255 255 /35%);
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  /* Cards */
+  
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* body{
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+} */
+.welcome-name{
+   font-size: 40px;
+   font-family: 'Lobster', cursive;
+    padding-left: 2rem;
+
+}
+
+.card {
+    border: none;
+    border-radius: 10px
+}
+
+.c-details span {
+    font-weight: 300;
+    font-size: 13px
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 39px
+}
+
+.badge span {
+    background-color: #fffbec;
+    width: 60px;
+    height: 25px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    color: #fed85d;
+    justify-content: center;
+    align-items: center
+}
+
+.progress {
+    height: 10px;
+    border-radius: 10px
+}
+
+.progress div {
+    background-color: red
+}
+
+.text1 {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.text2 {
+    color: #a5aec0
+}
+/* _____________________________________________breief style__________________________________________________________________ */
+.breif-section{
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh
+}
+/* .container{
+ text-align: center;
+  background-color: #ffffff59;
+  border-radius: 15px;
+} */
+.container h1{
+  margin-bottom: 25px;;
+}
+.container h4{
+  margin-bottom: 25px;
+  line-height: 1.5em ;
+  font-size: 22px;
+}
+.container h4 strong{
+  color: red;
+}
+
+/*------------------------------results-page------------------------*/
+/* body{
+  padding: 1rem;
+  background-color: #92D087;
+} */
+.result-section-container{
+  padding: 1rem;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  height: 100vh;
+}
+.results-container{
+  margin:auto;
+  width: 80%;
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.results-container .result{
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+.results-container h3{
+  font-weight: 400;
+}
+.show-results-btn{
+  width: 15%;
+  padding: 0.8rem 0;
+  border-radius: 1rem;
+  border: none;
+  
+}
+.show-results-btn:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+@media (max-width:850px){
+  .show-results-btn{
+      width: 30%;
+  }
+}
+@media (max-width:400px){
+  .show-results-btn{
+      width: 50%;
+  }
+}
+@media(max-width:768px){
+  .results-container{
+      margin-top: 5rem;
+  }
+}
+/* display results */
+.display-results{
+  text-align: center;
+  padding-top:1rem;
+  /* background-color: #63A6BB; */
+  height: fit-content;
+  /* height: 100vh; */
+}
+.question h2{
+  /* background-color: #C4C4C4; */
+  width:fit-content;
+  padding: 0.5rem 1rem;
+}
+.red{
+  background-color: red;
+}
+.green{
+  background-color: lightgreen;
+}
+ul{
+ box-shadow:  1px 1px 3px 3px rgba(0, 0, 0,0.3);
+  border-radius: 6px;
+  width: 50%;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+}
+.display-results-container{
+  margin-left: 3rem;
+  margin-bottom: 4rem;
+}
+.logout-btn-container{
+  width: 40%;
+  display: inline-block;
+  text-align: right;
+  /* padding-right: 2rem; */
+  padding-bottom: 2rem;
+
+}
+.main-question{
+  display: inline-block;
+  width: 55%;
+  text-align: right;
+}
