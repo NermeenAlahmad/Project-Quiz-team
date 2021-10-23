@@ -1,12 +1,10 @@
-body{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+/* _____________________________________________breief style__________________________________________________________________ */
+.breif-section{
     background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh
 }
 .container{
    text-align: center;
@@ -21,5 +19,9 @@ body{
     line-height: 1.5em ;
     font-size: 22px;
 }
+.container h4 strong{
+    color: red;
+}
+
 
 
