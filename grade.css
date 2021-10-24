@@ -1,15 +1,16 @@
 
-body {
+.grade-container {
     background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    width: 100%;
+    height: 100vh;
 }.grade {
-    width:40%;
-    height: 50vh;
-    margin: 7rem auto;
+   
+   
     background-color: #d9e9f3a9;
     text-align: center;
     padding-top: 3%;
 }
-i{
+i{  
     padding-top: 2rem;
     font-size: 90px;
     color: green;
@@ -20,3 +21,4 @@ i{
     color: rgb(184, 0, 0);
 
 }
+
