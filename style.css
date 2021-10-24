@@ -213,3 +213,69 @@ ul{
   width: 55%;
   text-align: right;
 }
+
+
+
+
+
+
+/*
+  Results Page Rules
+*/
+
+body {
+  padding: 1rem;
+  background-color: #92D087;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, .5);
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.grade-section {
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.grade-section .grade {
+  width:40%;
+  margin: 7rem auto;
+  background-color: #d9e9f3a9;
+  text-align: center;
+  padding-top: 3%;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 3px 1px #fff;
+}
+
+i {
+  padding-top: 2rem;
+  font-size: 90px;
+  color: green;
+}
+
+.wrong {
+  padding-top: 2rem;
+  font-size: 90px;
+  color: rgb(184, 0, 0);
+}
+
+/* display results */
+.green {
+  background-color: rgb(126, 218, 126);
+
+}
+
+.red {
+    background-color: rgb(235, 85, 15);
+}
+
