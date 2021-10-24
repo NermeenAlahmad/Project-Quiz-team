@@ -35,7 +35,8 @@
              <p class = "passwordP"></p>
           </div>
         </form>
-        <button type="submit" class="signup-btn btn btn-primary " onclick="signup()">Sign</button>
+        <button type="submit" class="signup-btn btn btn-primary w-25 " onclick="signup()">Signup</button>
+        <button type="btn" class="signup-btn btn btn-primary w-25 " >Login</button>
       </div>
     </section>
   </div>
@@ -60,28 +61,33 @@
       //name check 
       if(firstName.value===""){
       PFirstName.innerHTML="The First Name field is required."
-      PFirstName.style.color="red"
-    }
+      PFirstName.style.color="red"}
+      else{
+        PFirstName.innerHTML="";
+
+      }
+    
     //email cheack and validation 
       if(emailInput.value===""){
         emailP.innerHTML="The email field is required."
         emailP.style.color="red"
       }
-      if(emailInput.value.match(emailPattern)){
-          console.log("leen")}
-        else{
+      if(!emailInput.value.match(emailPattern)){
         emailP.innerHTML="Please Enter a valid email"
         emailP.style.color="red"}
+        else{
+          emailP.innerHTML="";
+       }
     //password cheak and validation 
     if(passwordInput.value===""){
       passwordP.innerHTML="The password field is required"
       passwordP.style.color="red"
       }
-      if(passwordInput.value.match(passwordPattern)){
-          console.log("leen")}
+      if(!passwordInput.value.match(passwordPattern)){
+        passwordP.innerHTML="password must be Az@#123"
+          passwordP.style.color="red"}
         else{
-          passwordP.innerHTML="password must be Az@#123"
-          passwordP.style.color="red"
+          passwordP.innerHTML=" ";
         }
         
         const validation={
