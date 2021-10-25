@@ -1,24 +1,35 @@
 /* The page is NOT responsive. You can implement responsiveness yourself if you wanna have some fun 😃 */
 
 :root {
-  --color-primary: #5ec576;
+  --color-primary: lightblue;
   --color-secondary: #ffcb03;
   --color-tertiary: #ff585f;
-  --color-primary-darker: #4bbb7d;
+  --color-primary-darker: blue;
   --color-secondary-darker: rgb(255, 187, 0);
   --color-tertiary-darker: #fd424b;
   --color-primary-opacity: #5ec5763a;
   --color-secondary-opacity: #ffcd0331;
   --color-tertiary-opacity: #ff58602d;
-  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
+  --gradient-primary: linear-gradient(to top left, #8BC6EC, #9599E2
+  );
   --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
 }
+/*----------------------------------------------------*/
+
+.header__img{
+  border-radius: 20rem;
+  object-fit: scale-down;
+  
+}
+
+
+
+/*-----------------------------------------------------*/
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  
 }
 
 html {
@@ -125,6 +136,7 @@ img {
   z-index: 100;
 }
 
+
 /* nav and stickly class at the same time */
 .nav.sticky {
   position: fixed;
@@ -132,7 +144,7 @@ img {
 }
 
 .nav__logo {
-  height: 4.5rem;
+  height: 14.5rem;
   transition: all 0.3s;
 }
 
@@ -209,6 +221,7 @@ h4 {
   grid-column: 2 / 3;
   grid-row: 1 / span 4;
   transform: translateY(-6rem);
+ 
 }
 
 .highlight {
@@ -688,9 +701,7 @@ h4 {
  #section--1{
 display: none;
 } */
-.nav{
-  display: none;
-}
+
 /*
 .features{
   display: none;
@@ -710,6 +721,9 @@ display: none;
 
 
 @media (max-width: 426px) {
+  header{
+    width: 80%;
+  }
   .operations__tab-container{
     display: flex;
     flex-flow: column wrap;
@@ -727,11 +741,23 @@ width: 80%;
     width: 80%;
   } */
   .operations{
-    width: 100vw;
+    width: 90vw !important;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
   }
   .operations__content--active{
     display: flex;
     flex-flow: column;
+  }
+  .operations__tab--1{
+    background-color: lightcoral !important;
+  }
+  .operations__tab--2{
+    background-color: #2465f1 !important;
+  }
+  .operations__tab--3{
+    background-color: #f7e018 !important;
   }
   .operations__icon{
     display: none;
@@ -749,6 +775,132 @@ width: 80%;
   .operations__content{
     padding: 2rem;
   }
+
+  .section {
+    padding: 0 0rem;
+    border-top: 1px solid #ddd;
+  
+    transition: transform 2s, opacity 1s;
+  }
+  h1{
+    font-size: 4rem !important;
+  }
+  
+  .section--hidden {
+    opacity: 0;
+    transform: translateY(9rem);
+  }
+  
+  .section__title {
+    max-width: 80% !important;
+    margin: 0 auto 8rem auto;
+  }
+  
+  .section__description {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .section__header {
+    font-size: 4rem;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: var(--color-primary);
+    font-size: 1.6rem;
+    font-family: inherit;
+    font-weight: 500;
+    border: none;
+    padding: 1.25rem 4.5rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: var(--color-primary-darker);
+  }
+  
+  .btn--text {
+    display: inline-block;
+    background: none;
+    font-size: 1.7rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--color-primary);
+    border: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  p {
+    color: #666;
+  }
+  
+  /* This is BAD for accessibility! Don't do in the real world! */
+  button:focus {
+    outline: none;
+  }
+  
+  img {
+    transition: filter 0.5s;
+  }
+  
+  .lazy-img {
+    filter: blur(20px);
+  }
+  
+  /* NAVIGATION */
+  .nav {
+  display: none;
+  }
+  .header{
+    margin: 0;
+    margin-left: 2rem;
+    padding: 0 !important;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .header__title{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-evenly !important;
+    flex: 2;
+    margin: 0;
+    margin-left: 2rem;
+    
+  }
+  .header__img{
+    display: none;
+  }
+  
+    
+  /*---------------------------------------------*/
+  .features{
+    display: flex !important;
+    flex-direction: column;
+    margin:0 0 !important;
+    text-align: center;
+  }
+  .features__img:nth-of-type(3){
+  order: 2;
+  }
+  .features__feature:nth-of-type(2){
+    order: 3;
+    
+  }
+  
 }
 
 .fa-html5{
