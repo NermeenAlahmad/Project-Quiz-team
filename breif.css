@@ -6,19 +6,19 @@
   align-items: center;
   min-height: 100vh
 }
-.container{
+.container-brief{
  text-align: center;
   background-color: #ffffff59;
   border-radius: 15px;
 }
-.container h1{
+.container-brief h1{
   margin-bottom: 25px;;
 }
-.container h4{
+.container-brief h4{
   margin-bottom: 25px;
   line-height: 1.5em ;
   font-size: 22px;
 }
-.container h4 strong{
+.container-brief h4 strong{
   color: red;
 }

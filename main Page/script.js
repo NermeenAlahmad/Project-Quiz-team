@@ -50,20 +50,20 @@ btnsOpenModal.forEach(function (btn) {
 //1.Add event listner to common parent element
 //2.in that event listner determine what elemnt is selected
 
-document.querySelector('.nav__links').addEventListener('click', function (e) {
-  //here if is used to select only the tab button
-  if (
-    e.target.classList.contains('nav__link') &&
-    !e.target.classList.contains('btn--show-modal')
-  ) {
-    e.preventDefault();
-    const id = e.target.getAttribute('href');
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//   //here if is used to select only the tab button
+//   if (
+//     e.target.classList.contains('nav__link') &&
+//     !e.target.classList.contains('btn--show-modal')
+//   ) {
+//     e.preventDefault();
+//     const id = e.target.getAttribute('href');
 
-    document.querySelector(id).scrollIntoView({
-      behavior: 'smooth',
-    });
-  }
-});
+//     document.querySelector(id).scrollIntoView({
+//       behavior: 'smooth',
+//     });
+//   }
+// });
 //_______________________________________________________________________
 //! Selecting creating and deleting elements
 //! it's complicated on MDN so it's suggested to read it from here
@@ -208,12 +208,12 @@ const navHoverStyle = function (e, opacity1, scale1, fontWeight1) {
   }
 };
 
-nav.addEventListener('mouseover', function (e) {
-  navHoverStyle(e, '0.2', '1.05', '600');
-});
-nav.addEventListener('mouseout', function (e) {
-  navHoverStyle(e, '1', '1', '400');
-});
+// nav.addEventListener('mouseover', function (e) {
+//   navHoverStyle(e, '0.2', '1.05', '600');
+// });
+// nav.addEventListener('mouseout', function (e) {
+//   navHoverStyle(e, '1', '1', '400');
+// });
 //________________________________________________________
 //! sticky navigation
 //const initialcord = section1.getBoundingClientRect();

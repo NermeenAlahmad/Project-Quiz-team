@@ -21,6 +21,13 @@
   object-fit: scale-down;
   
 }
+.navbar-background{
+  background: var(--gradient-primary) !important
+
+  ;
+  height: 9rem !important;
+ 
+}
 
 
 
@@ -144,7 +151,7 @@ img {
 }
 
 .nav__logo {
-  height: 14.5rem;
+  height: 6rem;
   transition: all 0.3s;
 }
 
