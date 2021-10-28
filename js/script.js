@@ -150,7 +150,7 @@ genrateExamPage = () => {
     </div>
     <div class="d-flex align-items-center justify-content-between">
         
-        <input class="btn d-block btn-primary w-25 ms-auto next-btn"  type="button" value="next">
+        <input class="btn d-block btn-primary ms-auto next-btn"  type="button" value="Next">
       </div>
   </section>`;
   container.insertAdjacentHTML("afterbegin", markup);

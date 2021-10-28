@@ -57,6 +57,26 @@
    
   }
 
+  .main-section .questions-section .next-btn {
+    width: 25%;
+  }
+
+  @media (max-width: 767px) {
+    .questions-section .answers-section {
+      font-size: 18px;
+    }
+    .main-section .questions-section {
+      width: 95%;
+      margin: auto;
+    }
+    .main-section .questions-section .next-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 24px;
+    }
+  }
+
   /* Login  */
    .login-section{
     width: 500px;
