@@ -10,8 +10,8 @@ let name; //the name that should be passed to the function generate cards we def
 //we should hide the card sections since it has 100vh style and it will push the content down
 //these are global variables and they should be reseted when we finish the exam
 let counter = 1;
-const userAnswersArr = [];
-const correctAnswersArr = [];
+let userAnswersArr = [];
+let correctAnswersArr = [];
 let wrongAnswers = 0;
 let correctAnswers = 0;
 let idInterval;
@@ -58,12 +58,11 @@ const genrateCardsPage = (name) => {
   
   <div class="intro-text py-5">
     <h3 class="welcome-name text-center mb-4 fw-bold">Welcome <span class="name">${name}</span>, Are You Ready?</h3>
-
   </div>
   <div class="row">
     <div class="col-md-4">
       <div class="card mb-3 text-center" style="width: 20rem;">
-        <img src="./images/html5.png" class="card-img-top w-50 h-50 m-auto pt-4" alt="HTML Quiz">
+        <img src="../images/html5.png" class="card-img-top w-50 h-50 m-auto pt-4" alt="HTML Quiz">
         <div class="card-body">
           <h4 class="card-title">HTML Quiz</h4>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -73,7 +72,7 @@ const genrateCardsPage = (name) => {
     </div>
     <div class="col-md-4">
       <div class="card mb-3 text-center" style="width: 20rem;">
-        <img src="./images/css3-logo.png" class="card-img-top w-50 h-50 m-auto pt-4" alt="HTML Quiz">
+        <img src="../images/css3-logo.png" class="card-img-top w-50 h-50 m-auto pt-4" alt="HTML Quiz">
         <div class="card-body">
           <h4 class="card-title">CSS Quiz</h4>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -83,7 +82,7 @@ const genrateCardsPage = (name) => {
     </div>
     <div class="col-md-4">
       <div class="card mb-3 text-center" style="width: 20rem;">
-        <img src="./images/js-logo.png" class="card-img-top w-50 h-50 m-auto pt-4" alt="HTML Quiz">
+        <img src="../images/js-logo.png" class="card-img-top w-50 h-50 m-auto pt-4" alt="HTML Quiz">
         <div class="card-body">
           <h4 class="card-title">JavaScript Quiz</h4>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -124,7 +123,6 @@ const generateExamBrief = (quizName) => {
       <button type="button" class="btn btn-primary text-center back-btn p-2 px-5 mt-4 ">
         Back
       </button>
-      
     </div>
   </div>
   
@@ -140,7 +138,7 @@ genrateExamPage = () => {
   container.innerHTML = "";
   container.style.minHeight="100vh"
   const markup = `<section class="questions-section">
-  <a href="main Page/index.html" class=" d-block h6 ms-auto home-btn"><i class="fas fa-home"></i></a>
+  <a href="../html/indexHomePage.html" class=" d-block h6 ms-auto home-btn"><i class="fas fa-home"></i></a>
     <div class="container">
       <h2 class="section-title">Questions</h2>
       <div class="row">
@@ -149,8 +147,8 @@ genrateExamPage = () => {
       
     </div>
     <div class="d-flex align-items-center justify-content-between">
+        <input class="btn d-block btn-primary ms-auto w-25  next-btn"  type="button" value="next">
         
-        <input class="btn d-block btn-primary ms-auto next-btn"  type="button" value="Next">
       </div>
   </section>`;
   container.insertAdjacentHTML("afterbegin", markup);
@@ -159,6 +157,9 @@ genrateExamPage = () => {
 const generateQuestion = function (question) {
   const container = document.querySelector(".questions-section .row");
   container.innerHTML = "";
+  // const backBtn=document.querySelector('.back-btn');
+  // if(counter===2)backBtn.style.display='inline-block';
+  
   //edit the styles
 
   const markup = ` 
@@ -221,14 +222,11 @@ generateResultsPage = (correctAnswers) => {
              correctAnswers >=5 ? "fa-check" : "fa-times wrong"
            }"></i>
       <h2>Your have ${correctAnswers} correct answer </h2>
-
        <h2>
            Your have ${10 - correctAnswers} wrong answers
        </h2>
   </div>
   <button class="show-results-btn btn btn-outline-dark text-white fw-bold">show results</button>
-
-
 </section>`;
 
   body.insertAdjacentHTML("beforeend", markup);
@@ -267,7 +265,7 @@ const generateQuestionResults = () => {
   const questionContainer = document.querySelector(".container div");
   for (let i = 1; i < 11; i++) {
     const markup = `
-    <a href="main Page/index.html" class="btn-logout">LOG OUT</a>
+    <a href="../html/indexHomePage.html" class="btn-logout">LOG OUT</a>
     <div class=" card card-result mx-3  p-5 my-3 shadow min-height-50 mt-5">
     <h2 class="mb-5 font-small-sm h2--${i}">Q${i} ${
       questionsObject[`question${i}`].question
@@ -320,6 +318,7 @@ const generateQuestionResults = () => {
 
 //name Input
 const firstName = document.querySelector(".firstNameInput");
+const lastName=document.querySelector('.LastNameInput');
 const PFirstName = document.querySelector(".firstNameP");
 //email input
 const emailInput = document.querySelector(".emailInput");
@@ -372,10 +371,11 @@ function signup() {
   }
 
   const validation = {
-    username: firstName.value,
+    username: firstName.value +" " +lastName.value,
     usermail: emailInput.value,
     userpass: passwordInput.value,
   };
+  console.log(validation);
 
   if (emailCheck && passCheck && nameCheck) {
     localStorage.setItem(emailInput.value, JSON.stringify(validation));
@@ -454,7 +454,19 @@ const setTimer = () => {
   
 
    idInterval=setInterval(() => {
-    console.log(timeCounter);
+    
+    if(counter===11 && timeCounter===-1){
+     
+      if (fetchedQuiz === "HTML") {
+        compareAnswers("../js/html-question.json");
+      }
+      if (fetchedQuiz === "JS") {
+        compareAnswers("../js/jsExam.json");
+      }
+      if (fetchedQuiz === "CSS") compareAnswers("../js/question-css.json");
+    }
+
+    
     if (timeCounter === -1) {
       //clearInterval(idInterval) 
       fetchQuestion(fetchedQuiz);
@@ -464,8 +476,11 @@ const setTimer = () => {
       //here if the fetchedquestion didn't work then we will know that we are in the last question
      
     }
+    
+    if(counter===12)return;
+
     //after we show the results we should return
-    if(counter===11)return;
+    
     // if(timeCounter===-1 && counter===11){
     //   if (fetchedQuiz === "HTML") {
     //     compareAnswers("js/html-question.json");
@@ -495,13 +510,14 @@ const fetchQuestion = function (examName) {
   //this function takes the questions from json file
   if (counter > 10) return;
   let url = "";
-  if (examName === "HTML") url = "js/html-question.json";
-  if (examName === "JS") url = "js/jsExam.json";
-  if (examName === "CSS") url = "js/question-css.json";
+  if (examName === "HTML") url = "../js/html-question.json";
+  if (examName === "JS") url = "../js/jsExam.json";
+  if (examName === "CSS") url = "../js/question-css.json";
   //here we fetch one question at a time
   fetch(url)
     .then((res) => res.json())
     .then((questions) => {
+      console.log(questions);
       //questions is an object inside of it obj={question1:a:'' b:'' c:'' d:'' correct:''}
       //if we reach question 10 then return we don't need to fetch anymore
       //question is the object inside the main object
@@ -517,12 +533,15 @@ const fetchQuestion = function (examName) {
 
       //nextBtn.style.display="inline-block";
      setTimer();
+     //save the counter in session storage
+     sessionStorage.setItem('counter',counter.toString());
       counter++;
       
       
     });
 };
 const compareAnswers = function (url) {
+  clearInterval(idInterval);
   fetch(url)
     .then((res) => res.json())
     .then((questions) => {
@@ -601,14 +620,17 @@ document.addEventListener("click", (e) => {
 
   if (e.target === htmlBtn) {
     fetchedQuiz = "HTML";
+    sessionStorage.setItem("fetchedQuiz",fetchedQuiz)
     generateExamBrief(fetchedQuiz);
   }
   if (e.target === cssBtn) {
     fetchedQuiz = "CSS";
+    sessionStorage.setItem("fetchedQuiz",fetchedQuiz)
     generateExamBrief(fetchedQuiz);
   }
   if (e.target === jsBtn) {
     fetchedQuiz = "JS";
+    sessionStorage.setItem("fetchedQuiz",fetchedQuiz)
     generateExamBrief("JS");
   }
   if (e.target === backBtn) {
@@ -641,12 +663,12 @@ document.addEventListener("click", (e) => {
     //inside the compare answers function we will genrate the resultsPage
     if (counter === 11) {
       if (fetchedQuiz === "HTML") {
-        compareAnswers("js/html-question.json");
+        compareAnswers("../js/html-question.json");
       }
       if (fetchedQuiz === "JS") {
-        compareAnswers("js/jsExam.json");
+        compareAnswers("../js/jsExam.json");
       }
-      if (fetchedQuiz === "CSS") compareAnswers("js/question-css.json");
+      if (fetchedQuiz === "CSS") compareAnswers("../js/question-css.json");
     }
     //loop through the 4 answers and check if one of them is checked
     //then store the checked one in session storage
@@ -660,11 +682,35 @@ document.addEventListener("click", (e) => {
         fetchQuestion(fetchedQuiz);
       }
       //else throw new error
+
     });
+    
   }
   /*-----------------------------------*/
   if (e.target === showResultsBtn) {
     generateDisplayResultsPage();
     generateQuestionResults();
+    //now we will remove the array
+    userAnswersArr=[];
+    correctAnswersArr=[];
+    counter=1;
+    sessionStorage.removeItem('counter')
+    //we should put them in clear function;
+  
+  }
+  const homeBtn= document.querySelector('.fa-home');
+  if(e.target===homeBtn){
+    sessionStorage.removeItem('counter');
+    sessionStorage.removeItem('fetchedQuiz');
   }
 });
+window.addEventListener('load',function(e){
+  if(!sessionStorage.getItem('counter'))return;
+ 
+let counterRetrieved=Number(sessionStorage.getItem('counter'));
+counter=counterRetrieved;
+fetchedQuiz=sessionStorage.getItem('fetchedQuiz');
+genrateExamPage();
+fetchQuestion(fetchedQuiz);
+
+})

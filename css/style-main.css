@@ -22,8 +22,10 @@
   
 }
 .navbar-background{
-  background: var(--gradient-primary) !important;
-  /* height: 9rem !important; */
+  background: var(--gradient-primary) !important
+
+  ;
+  height: 9rem !important;
  
 }
 
@@ -35,6 +37,13 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
+
+.salameh{
+  background-color: red;
+  color: white !important;
+  padding: 10px !important;
+  border-radius : 5px !important;
 }
 
 html {
@@ -162,20 +171,6 @@ img {
 .nav__item {
   margin-left: 4rem;
 }
-
-.navbar .navbar-toggler {
-  font-size: 24px;
-}
-
-.navbar-nav .nav-item {
-  padding: 15px;
-  text-align: center;
-}
-
-.navbar-nav .nav-item .nav-link {
-  font-size: 18px;
-}
-
 
 .nav__link:link,
 .nav__link:visited {
@@ -937,4 +932,17 @@ width: 80%;
   color:  #f7e018
 
   ;
+}
+
+@media (max-width: 1000px) {
+  .btn--text{
+    margin: auto;
+  }
+
+  .navbar-background{
+    background: var(--gradient-primary) !important
+  
+    ;
+    height: fit-content!important;
+  }
 }
