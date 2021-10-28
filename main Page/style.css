@@ -22,10 +22,8 @@
   
 }
 .navbar-background{
-  background: var(--gradient-primary) !important
-
-  ;
-  height: 9rem !important;
+  background: var(--gradient-primary) !important;
+  /* height: 9rem !important; */
  
 }
 
@@ -164,6 +162,20 @@ img {
 .nav__item {
   margin-left: 4rem;
 }
+
+.navbar .navbar-toggler {
+  font-size: 24px;
+}
+
+.navbar-nav .nav-item {
+  padding: 15px;
+  text-align: center;
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-size: 18px;
+}
+
 
 .nav__link:link,
 .nav__link:visited {
